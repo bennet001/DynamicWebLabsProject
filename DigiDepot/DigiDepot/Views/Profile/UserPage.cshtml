@@ -1,0 +1,28 @@
+﻿@model DigiDepot.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>User</title>
+</head>
+<body>
+    <div>
+        <h3>Welcome @Model.EmailAddress</h3>
+
+        <h5>Billing Info <a href="EditUser">edit</a></h5>
+        <ul>
+            <li>Name: @Model.FirstName @Model.LastName</li>
+            <li>Address: @Model.Address@(Model.Address2 == null ? "" : ", " + Model.Address2)</li>
+            <li>City: @Model.City</li>
+            <li>State: @Model.State</li>
+            <li>Zip Code: @Model.ZipCode</li>
+        </ul>
+    </div>
+</body>
+</html>
