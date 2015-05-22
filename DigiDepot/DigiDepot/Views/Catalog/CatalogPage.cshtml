@@ -1,0 +1,28 @@
+﻿@model List<DigiDepot.Models.Cart>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CatalogPage</title>
+</head>
+<body>
+    <div>
+        @foreach (DigiDepot.Models.Cart c in Model)
+        {
+
+            foreach (KeyValuePair<int, int> p in c.ItemDictionary)
+            {
+                <p> @p.Key , @p.Value</p>
+            }
+
+        }
+    </div>
+</body>
+</html>
+

@@ -85,10 +85,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="DAL\CartDBDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ICartDAL.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,6 +102,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Profile\UserPage.cshtml" />
     <Content Include="Views\Profile\EditUser.cshtml" />
+    <Content Include="Views\Catalog\CatalogPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
