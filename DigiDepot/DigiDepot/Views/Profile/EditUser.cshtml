@@ -1,0 +1,38 @@
+﻿@model DigiDepot.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit User</title>
+</head>
+<body>
+    <div>
+        <h3>Edit @Model.EmailAddress's Billing Info</h3>
+    </div>
+    <form method="post" action="UpdateProfile">
+        First Name:<input type="text" name="FirstName" value="@Model.FirstName" />
+        <br />
+        Last Name:<input type="text" name="LastName" value="@Model.LastName" />
+        <br />
+        Company (optional):<input type="text" name="Company" value="@Model.Company" />
+        <br />
+        Address:<input type="text" name="Address" value="@Model.Address" />
+        <br />
+        Apartment, Suite, etc. (optional):<input type="text" name="Address2" value="@Model.Address2" />
+        <br />
+        City: <input type="text" name="City" value="@Model.City" />
+        <br />
+        State: <input type="text" name="State" value="@Model.State" />
+        <br />
+        Zip Code: <input type="text" name="Zip" value="@Model.ZipCode" />
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
