@@ -1,0 +1,30 @@
+﻿
+body {
+    background-color:#29526D;
+    margin-left:25%;
+    margin-right:25%;
+}
+.sidebar {
+    background-color:#7F81B1;
+    position:absolute;
+    top:0; bottom:0; left:24%;
+    width:50px;
+}
+.header { 
+    background-color:#7F81B1;
+     position:relative;
+           top:-9px; bottom:0;left:0px;
+    margin:0 0 5px 0;
+}
+/*.content { 
+    background-color:#A0B7C6;
+    position:relative;
+           top:0px; bottom:0;left:50px;
+    margin:5px 0 5px 0;
+}*/
+.container {
+    background-color:#A0B7C6;
+    position:relative;
+           top:0px; bottom:0;left:50px;
+    margin:5px 0 0 0;
+}

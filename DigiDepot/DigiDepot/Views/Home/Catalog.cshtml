@@ -1,0 +1,15 @@
+﻿@using DigiDepot.Models;
+@model List<Product>
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h2 class="header">Catalog</h2>
+<div class="content">
+    @foreach (Product pro in Model)
+    {
+        <div class="ProductItem">
+            @Html.ActionLink(pro.ProductName, "ProductPage", new { id = pro.productID})
+        </div>
+    }
+</div>

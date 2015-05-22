@@ -1,0 +1,17 @@
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\DigiDepot.Tests.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\DigiDepot.Tests.pdb
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\DigiDepot.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.Mvc.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.Razor.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.WebPages.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\DigiDepot.pdb
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.Mvc.xml
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.Razor.xml
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.WebPages.xml
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\obj\Debug\DigiDepot.Tests.csprojResolveAssemblyReference.cache
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\obj\Debug\DigiDepot.Tests.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\obj\Debug\DigiDepot.Tests.pdb

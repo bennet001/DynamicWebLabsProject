@@ -1,0 +1,2 @@
+﻿ID:1 ProName:Micro processor ProDescr:Intel Micro process with dual core technology ProPrice:19.50
+ID:2 ProName:Micro processor ProDescr:Intel Micro process with dual core technology ProPrice:190.50
