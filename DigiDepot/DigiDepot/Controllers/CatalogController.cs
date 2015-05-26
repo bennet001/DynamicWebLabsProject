@@ -51,10 +51,10 @@ namespace DigiDepot.Controllers
         public void CreateTestCase()
         {
             IEnumerable<Product> testProducts = new List<Product>{
-                new Product(0,"TestSoap","1.35",1),
-                new Product(1,"TestBagel","0.99",3),
-                new Product(2,"TestPaper","2.0",4),
-                new Product(3,"TestGeneric","99.99",1)
+                new Product(0,"TestSoap",1.35,1),
+                new Product(1,"TestBagel",0.99,3),
+                new Product(2,"TestPaper",2.0,4),
+                new Product(3,"TestGeneric",99.99,1)
             };
             Cart testCart = new Cart(1, testProducts);
             cartDAL.UpdateCart(testCart);

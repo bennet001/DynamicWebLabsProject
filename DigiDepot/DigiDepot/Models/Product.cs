@@ -7,14 +7,14 @@ namespace DigiDepot.Models
 {
     public class Product
     {
-        public Product(int productID, string name, string priceing)
+        public Product(long productID,string name, double priceing)
         {
             ID = productID;
             Name = name;
             Price = priceing;
             AvaliableQuantity = 20;
         }
-        public Product(int productID, string name, string priceing, int grab)
+        public Product(long productID, string name, double priceing, int grab)
         {
             ID = productID;
             Name = name;
@@ -22,9 +22,10 @@ namespace DigiDepot.Models
             GrabbedQuantity = grab;
             AvaliableQuantity = 20 - grab;
         }
+
         public string Name { get; set; }
-        public string Price { get; set; }
-        public int ID { get; private set; }
+        public double Price { get; set; }
+        public long ID { get; private set; }
         public int AvaliableQuantity { get; set; }
         public int GrabbedQuantity { get; set; }
 

@@ -8,10 +8,10 @@ namespace DigiDepot.Models
 {
     public class Cart
     {
-        public Cart(int ID, IEnumerable<Product> productList)
+        public Cart(long ID, IEnumerable<Product> productList)
         {
             CartID = ID;
-            ItemDictionary = new Dictionary<int, int>();
+            ItemDictionary = new Dictionary<long, int>();
             foreach (Product p in productList)
             {
                 ItemDictionary.Add(p.ID, p.GrabbedQuantity);
@@ -23,7 +23,7 @@ namespace DigiDepot.Models
         {
 
             StringBuilder s = new StringBuilder("CartID:" + CartID);
-            foreach (KeyValuePair<int, int> k in ItemDictionary)
+            foreach (KeyValuePair<long, int> k in ItemDictionary)
             {
                 s.Append(" ProductID:").Append(k.Key).Append(" Quantity:").Append(k.Value);
             }
@@ -31,9 +31,9 @@ namespace DigiDepot.Models
         }
 
         public string ItemID { get; set; }
-        public int CartID { get; set; }
+        public long CartID { get; set; }
         public int Quantity { get; set; }
-        public Dictionary<int, int> ItemDictionary { get; set; }
+        public Dictionary<long, int> ItemDictionary { get; set; }
         public List<Product> ItemsInCart { get; set; }
 
         public virtual Product Item { get; set; }

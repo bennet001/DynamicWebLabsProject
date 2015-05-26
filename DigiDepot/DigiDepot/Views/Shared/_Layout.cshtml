@@ -1,0 +1,35 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - DigiDepot Group 5 ASP.NET Application</title>
+    <link href="~/Styles/MainStyleSheet.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+
+    <div class="sidebar">
+        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <br />
+        @Html.ActionLink("Catalog", "Catalog", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <br />
+        Search
+        <br />
+        @Html.ActionLink("Log In", "LogIn","Home")
+        <br />
+        Register
+    </div>
+    <div class="container">
+        @RenderBody()
+        <hr />
+        <footer class="footer">
+            <p>&copy; @DateTime.Now.Year - DigiDepot Group 5 ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

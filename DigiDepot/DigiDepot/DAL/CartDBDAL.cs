@@ -42,7 +42,7 @@ namespace DigiDepot.DAL
                         //else
                         //{
                         // List<Product> containedInCart = new List<Product>();
-                        Dictionary<int, int> containedData = new Dictionary<int, int>();
+                        Dictionary<long, int> containedData = new Dictionary<long, int>();
                         foreach (string p in lines)
                         {
                             Match proMatch = Regex.Match(p, sepPatternProducts);

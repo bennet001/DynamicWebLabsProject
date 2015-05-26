@@ -16,7 +16,7 @@
         @foreach (DigiDepot.Models.Cart c in Model)
         {
 
-            foreach (KeyValuePair<int, int> p in c.ItemDictionary)
+            foreach (KeyValuePair<long, int> p in c.ItemDictionary)
             {
                 <p> @p.Key , @p.Value</p>
             }
