@@ -15,3 +15,5 @@ D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsPr
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\obj\Debug\DigiDepot.Tests.csprojResolveAssemblyReference.cache
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\obj\Debug\DigiDepot.Tests.dll
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\obj\Debug\DigiDepot.Tests.pdb
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\EntityFramework.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot.Tests\bin\Debug\EntityFramework.xml

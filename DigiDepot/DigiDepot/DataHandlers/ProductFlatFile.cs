@@ -20,7 +20,7 @@ namespace DigiDepot.DataHandlers
         string filelocal = @"\App_Data\ProductPage.txt";
         private static string sPattern = @"ID:(?<ProID>\d+) ProName:(?<ProNa>.+) ProPrice:(?<ProPri>.+) ProGrab:(?<ProGra>.+)";
 
-        public IEnumerable<Product> GetAllItems()
+        public List<Product> GetAllItems()
         {
 
             string[] lines = File.ReadAllLines(path + filelocal);
@@ -57,7 +57,7 @@ namespace DigiDepot.DataHandlers
                     System.Console.WriteLine(" - invalid");
                 }
             }
-            return catalog.Values;
+            return catalog.Values.ToList();
         }
 
         public void Update(Product pro)

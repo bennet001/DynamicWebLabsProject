@@ -1,33 +1,32 @@
-﻿@model DigiDepot.Models.User
+﻿@model DigiDepot.User
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "LogIn";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Login</h2>
-
+<h2>LogIn</h2>
 <div class="Invitation">
     @using (Html.BeginForm())
     {
         <div class="ValidationView">
-                @Html.ValidationSummary()
-            </div>
+            @Html.ValidationSummary()
+        </div>
         <br />
 
         <div class="UserName">
             <label>
-                First name:
+                User name:
             </label>
-            @Html.TextBoxFor(x=>x.FirstName)
+            @Html.TextBoxFor(x => x.user_name)
         </div>
         <br />
 
         <div class="Email">
             <label>
-                Email:
+                Password:
             </label>
-            @Html.TextBoxFor(x => x.EmailAddress)
+            @Html.TextBoxFor(x => x.password)
         </div>
         <br />
 

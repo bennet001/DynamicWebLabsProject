@@ -34,3 +34,7 @@ D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsPr
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\obj\Debug\DigiDepot.dll
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\obj\Debug\DigiDepot.pdb
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\obj\Debug\DigiDepot.csprojResolveAssemblyReference.cache
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.SqlServer.dll
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.xml
+D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.SqlServer.xml

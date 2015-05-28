@@ -9,7 +9,7 @@ namespace DigiDepot.Controllers
 {
     public class ProfileController : Controller
     {
-        private User hardCodedUser = new User("zaustin@student.neumont.edu", "zach", "austin", "350S 600E", "Apt. 406", "Salt Lake City", "UT", 84102);
+        private BillingInformation hardCodedUser = new BillingInformation("zaustin@student.neumont.edu", "zach", "austin", "350S 600E", "Apt. 406", "Salt Lake City", "UT", 84102);
 
         public ActionResult UserPage()
         {
@@ -42,8 +42,8 @@ namespace DigiDepot.Controllers
             //store the updated user object in the session
             //for the demo, as we are sans-DB, I construct a new User object using form data and replace the session data with that
 
-            User current = (User)System.Web.HttpContext.Current.Session["currentUser"];
-            User updated = new User(current.EmailAddress, firstname, lastname, address, address2, city, state, zip);
+            BillingInformation current = (BillingInformation)System.Web.HttpContext.Current.Session["currentUser"];
+            BillingInformation updated = new BillingInformation(current.EmailAddress, firstname, lastname, address, address2, city, state, zip);
             System.Web.HttpContext.Current.Session["currentUser"] = updated;
             return Redirect("UserPage");//redirect to the profile page
         }

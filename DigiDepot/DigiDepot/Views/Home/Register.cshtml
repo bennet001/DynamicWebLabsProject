@@ -1,0 +1,44 @@
+﻿@model DigiDepot.User
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="ValidationView">
+        @Html.ValidationSummary()
+    </div>
+    <br />
+
+    <div class="UserName">
+        <label>
+            User name:
+        </label>
+        @Html.TextBoxFor(x => x.user_name)
+    </div>
+    <br />
+
+    <div class="email">
+        <label>
+            E-Mail:
+        </label>
+        @Html.TextBoxFor(x => x.e_mail_address)
+    </div>
+    <br />
+
+    <div class="Password">
+        <label>
+            Password:
+        </label>
+        @Html.TextBoxFor(x => x.password)
+    </div>
+    <br />
+
+    <div class="btn">
+        <input type="submit" value="Finish" />
+    </div>
+}

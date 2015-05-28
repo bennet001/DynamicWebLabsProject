@@ -9,7 +9,7 @@ namespace DigiDepot.Interfaces
 {
     interface IDataHandler<T>
     {
-        IEnumerable<T> GetAllItems();
+        List<T> GetAllItems();
 
         void Update(T pro);
 

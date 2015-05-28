@@ -9,15 +9,15 @@ using System.Web;
 
 namespace DigiDepot.DataHandlers
 {
-    public class UserFlatFile : IDataHandler<User>
+    public class BillingFlatFile : IDataHandler<BillingInformation>
     {
-        Dictionary<long, User> catalog = new Dictionary<long, User>();
+        Dictionary<long, BillingInformation> catalog = new Dictionary<long, BillingInformation>();
         string path = HttpContext.Current.Server.MapPath("~");
 
         string filelocal = @"\App_Data\UserPage.txt";
         static string sPattern = @"ID:(?<UsId>\d+) FirstName:(?<UsFiNa>.+) LastName:(?<UsLaNa>.+) UserEAddress:(?<UsEAd>.+) UserAdd:(?<UsAd>\.+) User2Add:(?<Us2Ad>\.+) UserCit:(?<UsCit>\.+) UserState:(?<UsSt>\.+) UserZip:(?<UsZi>\.+)";
 
-        public IEnumerable<User> GetAllItems()
+        public List<BillingInformation> GetAllItems()
         {
 
             string[] lines = File.ReadAllLines(path + filelocal);
@@ -35,11 +35,11 @@ namespace DigiDepot.DataHandlers
                     {
                         if (catalog.ContainsKey(id))
                         {
-                            catalog[id] = new User(match.Groups["UsEmail"].ToString(), match.Groups["UsFiNa"].ToString(), match.Groups["UsLaNa"].ToString(), match.Groups["UsAd"].ToString(), match.Groups["Us2Ad"].ToString(), match.Groups["UsCit"].ToString(), match.Groups["UsSt"].ToString(), zip);
+                            catalog[id] = new BillingInformation(match.Groups["UsEmail"].ToString(), match.Groups["UsFiNa"].ToString(), match.Groups["UsLaNa"].ToString(), match.Groups["UsAd"].ToString(), match.Groups["Us2Ad"].ToString(), match.Groups["UsCit"].ToString(), match.Groups["UsSt"].ToString(), zip);
                         }
                         else
                         {
-                            catalog.Add(id, new User(id, match.Groups["UsEmail"].ToString(), match.Groups["UsFiNa"].ToString(), match.Groups["UsLaNa"].ToString(), match.Groups["UsAd"].ToString(), match.Groups["Us2Ad"].ToString(), match.Groups["UsCit"].ToString(), match.Groups["UsSt"].ToString(), zip));
+                            catalog.Add(id, new BillingInformation(id, match.Groups["UsEmail"].ToString(), match.Groups["UsFiNa"].ToString(), match.Groups["UsLaNa"].ToString(), match.Groups["UsAd"].ToString(), match.Groups["Us2Ad"].ToString(), match.Groups["UsCit"].ToString(), match.Groups["UsSt"].ToString(), zip));
                         }
                     }
                     else
@@ -52,10 +52,10 @@ namespace DigiDepot.DataHandlers
                     System.Console.WriteLine(" - invalid");
                 }
             }
-            return catalog.Values;
+            return catalog.Values.ToList();
         }
 
-        public void Update(User pro)
+        public void Update(BillingInformation pro)
         {
             if (catalog.Count > 0)
             {
@@ -93,7 +93,7 @@ namespace DigiDepot.DataHandlers
             }
         }
 
-        public void Delete(User pro)
+        public void Delete(BillingInformation pro)
         {
             string[] lines = File.ReadAllLines(path + filelocal);
 
@@ -124,9 +124,9 @@ namespace DigiDepot.DataHandlers
             file.Close();
         }
 
-        public User Get(int id)
+        public BillingInformation Get(int id)
         {
-            User returnable = null;
+            BillingInformation returnable = null;
             if (catalog.Count > 0 && catalog.ContainsKey(id))
             {
                 returnable = catalog[id];
@@ -143,7 +143,7 @@ namespace DigiDepot.DataHandlers
                     int.TryParse(match.Groups["UsZi"].ToString(), out zip);
                     if (Innerid != -1 && Innerid.Equals(id))
                     {
-                        returnable = new User(Innerid,  match.Groups["UsEmail"].ToString(), match.Groups["UsFiNa"].ToString(), match.Groups["UsLaNa"].ToString(), match.Groups["UsAd"].ToString(), match.Groups["Us2Ad"].ToString(), match.Groups["UsCit"].ToString(), match.Groups["UsSt"].ToString(), zip);
+                        returnable = new BillingInformation(Innerid,  match.Groups["UsEmail"].ToString(), match.Groups["UsFiNa"].ToString(), match.Groups["UsLaNa"].ToString(), match.Groups["UsAd"].ToString(), match.Groups["Us2Ad"].ToString(), match.Groups["UsCit"].ToString(), match.Groups["UsSt"].ToString(), zip);
                     }
                     else
                     {
@@ -159,9 +159,9 @@ namespace DigiDepot.DataHandlers
 
         }
 
-        public User Get(User pro)
+        public BillingInformation Get(BillingInformation pro)
         {
-            User returnable = null;
+            BillingInformation returnable = null;
             string[] lines = File.ReadAllLines(path + filelocal);
             foreach (string User in lines)
             {
@@ -174,7 +174,7 @@ namespace DigiDepot.DataHandlers
                     int.TryParse(match.Groups["UsZi"].ToString(), out zip);
                     if (Innerid != -1 && Innerid.Equals(pro.UserId))
                     {
-                        returnable = new User(Innerid, match.Groups["UsEmail"].ToString(), match.Groups["UsFiNa"].ToString(), match.Groups["UsLaNa"].ToString(), match.Groups["UsAd"].ToString(), match.Groups["Us2Ad"].ToString(), match.Groups["UsCit"].ToString(), match.Groups["UsSt"].ToString(), zip);
+                        returnable = new BillingInformation(Innerid, match.Groups["UsEmail"].ToString(), match.Groups["UsFiNa"].ToString(), match.Groups["UsLaNa"].ToString(), match.Groups["UsAd"].ToString(), match.Groups["Us2Ad"].ToString(), match.Groups["UsCit"].ToString(), match.Groups["UsSt"].ToString(), zip);
                     }
                     else
                     {
@@ -189,18 +189,18 @@ namespace DigiDepot.DataHandlers
             return returnable;
         }
 
-        public void Create(User pro)
+        public void Create(BillingInformation pro)
         {
             StreamWriter file = new StreamWriter(path + filelocal, true);
-            User returnable = new User(email:pro.EmailAddress, first: pro.FirstName, last: pro.LastName,address:pro.Address,address2:pro.Address2, city:pro.City,state:pro.State,zipcode:pro.ZipCode);
+            BillingInformation returnable = new BillingInformation(email:pro.EmailAddress, first: pro.FirstName, last: pro.LastName,address:pro.Address,address2:pro.Address2, city:pro.City,state:pro.State,zipcode:pro.ZipCode);
             file.WriteLine(returnable.ToString());
             file.Close();
         }
 
-        public void Save(IEnumerable<User> pro)
+        public void Save(IEnumerable<BillingInformation> pro)
         {
             StreamWriter file = new StreamWriter(path + filelocal);
-            foreach (User p in pro)
+            foreach (BillingInformation p in pro)
             {
                 file.WriteLine(p);
             }
