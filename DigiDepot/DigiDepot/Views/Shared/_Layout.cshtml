@@ -17,11 +17,17 @@
         <br />
         Search
         <br />
+        @if (Session["UserInfo"] == null)
+        { 
         @Html.ActionLink("Log In", "LogIn","Home")
         <br />
         @Html.ActionLink("Register", "Register", "Home")
         <br />
-        Register
+        }
+        else
+        {
+            @Html.ActionLink(@Session["UserInfo"].ToString(), "LogIn", "Home")
+        }
     </div>
     <div class="container">
         @RenderBody()

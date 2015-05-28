@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HelloMVC.MyValidations;
 
 namespace DigiDepot.Controllers
 {
@@ -30,6 +31,7 @@ namespace DigiDepot.Controllers
             return View(iproductdat.Get(id));
         }
 
+        #region LogIn
         [HttpGet]
         public ActionResult LogIn()
         {
@@ -42,7 +44,7 @@ namespace DigiDepot.Controllers
             user = iuserdat.Get(user);
             if (user != null)
             {
-                Session["UserInfo"] = user;
+                Session["UserInfo"] = user.user_name;
                 return RedirectToAction("index");
             }
             else
@@ -50,7 +52,9 @@ namespace DigiDepot.Controllers
                 return View();
             }
         }
+        #endregion
 
+        #region Register
         [HttpGet]
         public ActionResult Register()
         {
@@ -60,10 +64,10 @@ namespace DigiDepot.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
-            if (user != null && user.user_name.Length > 0 && user.password.Length >0)
+            if (user != null && user.user_name.Length > 0 && user.password.Length >0&&EmailValidation.IsValid(user.e_mail_address))
             {
                 iuserdat.Create(user);
-                Session["UserInfo"] = user;
+                Session["UserInfo"] = user.user_name;
                 return RedirectToAction("index");
             }
             else
@@ -71,5 +75,7 @@ namespace DigiDepot.Controllers
                 return View();
             }
         }
+        #endregion
+
     }
 }

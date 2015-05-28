@@ -5,6 +5,7 @@ body {
     margin-right:25%;
 }
 .sidebar {
+    align-content:center;
     background-color:#7F81B1;
     position:absolute;
     top:0; bottom:0; left:24%;

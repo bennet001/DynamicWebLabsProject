@@ -11,12 +11,18 @@ namespace DigiDepot
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class User
     {
         public int Id { get; set; }
+        [Required(ErrorMessage="You must have a user name")]
         public string user_name { get; set; }
+
+        [Required(ErrorMessage = "You must have password")]
+        [DataType(DataType.Password,ErrorMessage="You must have a valid Password")]
         public string password { get; set; }
+
         public string e_mail_address { get; set; }
     }
 }
