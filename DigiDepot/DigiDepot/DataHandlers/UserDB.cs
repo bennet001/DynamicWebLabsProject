@@ -31,6 +31,10 @@ namespace DigiDepot.DataHandlers
                 mdbc.SaveChanges();
             }
         }
+        public void Update(User car, int itemID, int itemQuantity)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Delete(User pro)
         {
@@ -40,6 +44,10 @@ namespace DigiDepot.DataHandlers
                 mdbc.Users.Remove(toRemove);
                 mdbc.SaveChanges();
             }
+        }
+        public void Remove(User pro, int itemID)
+        {
+            throw new NotImplementedException();
         }
 
         public User Get(int id)

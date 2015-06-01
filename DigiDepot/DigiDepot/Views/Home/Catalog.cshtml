@@ -1,5 +1,5 @@
-﻿@using DigiDepot.Models;
-@model List<Product>
+﻿@model List<Product>
+
 @{
     ViewBag.Title = "Catalog";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,7 +10,7 @@
     @foreach (Product pro in Model)
     {
         <div class="ProductItem">
-            @Html.ActionLink(pro.Name, "ProductPage", new { id = pro.ID})
+            @Html.ActionLink("Catalog", "CatalogPage", "Catalog")
         </div>
     }
 </div>

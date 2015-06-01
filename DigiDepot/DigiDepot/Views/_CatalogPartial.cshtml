@@ -1,0 +1,7 @@
+﻿@using DigiDepot.Models
+@model Product
+
+@Html.ActionLink(@Model.Name.ToString(), "ShowProduct", new { id = @Model.ID })
+<h3>Price: $@Model.Price</h3>
+<h3>Avaliable: @Model.AvaliableQuantity</h3>
+

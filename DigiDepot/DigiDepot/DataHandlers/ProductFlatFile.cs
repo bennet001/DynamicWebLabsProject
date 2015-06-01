@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
 using System.IO;
-using DigiDepot.Enums;
+//using DigiDepot.Enums;
 
 
 namespace DigiDepot.DataHandlers
@@ -98,6 +98,10 @@ namespace DigiDepot.DataHandlers
                 file.Dispose();
             }
         }
+        public void Update(Product car, int itemID, int itemQuantity)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Delete(Product pro)
         {
@@ -128,6 +132,10 @@ namespace DigiDepot.DataHandlers
                 }
             }
             file.Dispose();
+        }
+        public void Remove(Product car, int itemID)
+        {
+            throw new NotImplementedException();
         }
 
         public Product Get(int id)
@@ -209,10 +217,10 @@ namespace DigiDepot.DataHandlers
             file.Dispose();
         }
 
-        public IEnumerable<Product> GetProductsByCategory(Category c)
-        {
-            var toReturn = catalog.Where(k => k.Value.Categories.Contains(c)).Select(k => k.Value);
-            return toReturn;
-        }
+        //public IEnumerable<Product> GetProductsByCategory(Category c)
+        //{
+        //    var toReturn = catalog.Where(k => k.Value.Categories.Contains(c)).Select(k => k.Value);
+        //    return toReturn;
+        //}
     }
 }

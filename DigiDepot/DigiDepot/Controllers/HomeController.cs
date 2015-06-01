@@ -12,8 +12,8 @@ namespace DigiDepot.Controllers
 {
     public class HomeController : Controller
     {
-        IDataHandler<Product> iproductdat = new ProductFlatFile();
-        IDataHandler<BillingInformation> ibillingdat = new BillingFlatFile();
+        IDataHandler<Product> iproductdat = new ProductDB();
+        //IDataHandler<BillingInformation> ibillingdat = new BillingFlatFile();
         IDataHandler<User> iuserdat = new UserDB();
         // GET: Home
         public ActionResult Index()
@@ -65,7 +65,7 @@ namespace DigiDepot.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
-            if (user != null && user.user_name.Length > 0 && user.password.Length >0&&EmailValidation.IsValid(user.e_mail_address))
+            if (user != null && user.user_name.Length > 0 && user.password.Length > 0 && EmailValidation.IsValid(user.e_mail_address))
             {
                 iuserdat.Create(user);
                 Session["UserInfo"] = user.user_name;

@@ -12,11 +12,12 @@ namespace DigiDepot
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Product
     {
         public int Id { get; set; }
-        public string user_name { get; set; }
-        public string password { get; set; }
-        public string e_mail_address { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public Nullable<int> Stock { get; set; }
+        public string Description { get; set; }
     }
 }

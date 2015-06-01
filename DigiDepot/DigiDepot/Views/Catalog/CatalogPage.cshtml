@@ -1,4 +1,4 @@
-﻿@model List<DigiDepot.Models.Cart>
+﻿@model List<Product>
 
 @{
     Layout = null;
@@ -13,15 +13,12 @@
 </head>
 <body>
     <div>
-        @foreach (DigiDepot.Models.Cart c in Model)
+        <h1>This is the Catelog</h1>
+        @foreach (Product c in Model)
         {
-
-            foreach (KeyValuePair<long, int> p in c.ItemDictionary)
-            {
-                <p> @p.Key , @p.Value</p>
-            }
-
+            @Html.Partial("~/Views/_CatalogPartial.cshtml", @c);
         }
+        @Html.ActionLink("Cart", "ViewCart", new { id = 0 })
     </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿using DigiDepot.Enums;
+﻿//using DigiDepot.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,12 +45,12 @@ namespace DigiDepot.Models
             }
         }
 
-        public HashSet<Category> Categories { get; private set; }
+        //public HashSet<Category> Categories { get; private set; }
 
-        public void AddCategory(Category c)
-        {
-            Categories.Add(c);
-        }
+        //public void AddCategory(Category c)
+        //{
+        //    Categories.Add(c);
+        //}
 
         //public static int ID { get; set; }
     }

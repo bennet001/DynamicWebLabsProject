@@ -11,16 +11,20 @@ namespace DigiDepot.Interfaces
     {
         List<T> GetAllItems();
 
-        void Update(T pro);
+        void Update(T item);
 
-        void Delete(T pro);
+        void Update(T cart, int item, int quantity);
+
+        void Delete(T item);
+
+        void Remove(T cart, int item);
 
         T Get(int id);
 
-        T Get(T pro);
+        T Get(T item);
 
-        void Create(T pro);
+        void Create(T item);
 
-        void Save(IEnumerable<T> pro);
+        void Save(IEnumerable<T> item);
     }
 }

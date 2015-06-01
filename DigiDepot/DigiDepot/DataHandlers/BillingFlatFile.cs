@@ -54,7 +54,7 @@ namespace DigiDepot.DataHandlers
             }
             return catalog.Values.ToList();
         }
-
+        
         public void Update(BillingInformation pro)
         {
             if (catalog.Count > 0)
@@ -92,7 +92,11 @@ namespace DigiDepot.DataHandlers
                 file.Close();
             }
         }
-
+        public void Update(BillingInformation car, int itemID, int itemQuantity)
+        {
+            throw new NotImplementedException();
+        }
+        
         public void Delete(BillingInformation pro)
         {
             string[] lines = File.ReadAllLines(path + filelocal);
@@ -122,6 +126,10 @@ namespace DigiDepot.DataHandlers
                 }
             }
             file.Close();
+        }
+        public void Remove(BillingInformation car, int itemID)
+        {
+            throw new NotImplementedException();
         }
 
         public BillingInformation Get(int id)
