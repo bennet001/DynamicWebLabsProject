@@ -45,6 +45,7 @@ namespace DigiDepot.Controllers
             if (user != null)
             {
                 Session["UserInfo"] = user.user_name;
+                Session["UserID"] = user.Id;
                 return RedirectToAction("index");
             }
             else
@@ -68,6 +69,7 @@ namespace DigiDepot.Controllers
             {
                 iuserdat.Create(user);
                 Session["UserInfo"] = user.user_name;
+                Session["UserID"] = user.Id;
                 return RedirectToAction("index");
             }
             else
@@ -77,5 +79,48 @@ namespace DigiDepot.Controllers
         }
         #endregion
 
+
+        public ActionResult UserPage()
+        {
+            int id = -1;
+            if (int.TryParse(Session["UserID"].ToString(), out id))
+            {
+                return View(iuserdat.Get(id));
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult EmailEdit(int id)
+        {
+            User got = iuserdat.Get(id);
+            if (got != null)
+            {
+                return View(got);
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult EmailEdit(User use)
+        {
+            iuserdat.Update(use);
+            return View("Index");
+        }
+
+
+        public ActionResult AccountDelete(int id)
+        {
+            Session["UserInfo"] = null;
+            Session["UserID"] = null;
+            iuserdat.Delete(iuserdat.Get(id));
+            return View("Index");
+        }
     }
 }

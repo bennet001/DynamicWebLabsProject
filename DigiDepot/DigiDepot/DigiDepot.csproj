@@ -171,6 +171,8 @@
     </Content>
     <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\UserPage.cshtml" />
+    <Content Include="Views\Home\EmailEdit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

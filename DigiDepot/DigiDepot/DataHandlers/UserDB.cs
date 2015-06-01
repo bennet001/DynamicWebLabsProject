@@ -24,7 +24,7 @@ namespace DigiDepot.DataHandlers
             User toEdit;
             using (DigiDepotDBContext mdbc = new DigiDepotDBContext())
             {
-                toEdit = mdbc.Users.Where(m => m.Id == pro.Id).Single();
+                toEdit = mdbc.Users.Where(m => m.user_name == pro.user_name && m.password == pro.password).Single();
                 toEdit.user_name = pro.user_name;
                 toEdit.e_mail_address = pro.e_mail_address;
                 toEdit.password = pro.password;
@@ -36,7 +36,7 @@ namespace DigiDepot.DataHandlers
         {
             using (DigiDepotDBContext mdbc = new DigiDepotDBContext())
             {
-                User toRemove = mdbc.Users.Where(m => m.Id == pro.Id).Single();
+                User toRemove = mdbc.Users.Where(m => m.user_name == pro.user_name && m.password == pro.password).Single();
                 mdbc.Users.Remove(toRemove);
                 mdbc.SaveChanges();
             }

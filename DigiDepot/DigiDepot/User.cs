@@ -15,7 +15,7 @@ namespace DigiDepot
     
     public partial class User
     {
-        public int Id { get; set; }
+        public int Id { get; private set; }
         [Required(ErrorMessage="You must have a user name")]
         public string user_name { get; set; }
 

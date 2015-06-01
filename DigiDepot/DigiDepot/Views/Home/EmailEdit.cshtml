@@ -1,0 +1,31 @@
+﻿@model DigiDepot.User
+
+@{
+    ViewBag.Title = "EmailEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EmailEdit</h2>
+
+<div class="Invitation">
+    @using (Html.BeginForm())
+    {
+        <div class="ValidationView">
+            @Html.ValidationSummary()
+        </div>
+        <br />
+        @Html.HiddenFor(x => x.Id, Model.Id)
+        @Html.HiddenFor(x => x.user_name,Model.user_name)
+        @Html.HiddenFor(x=>x.password, Model.password)
+    <div class="email">
+        <label>
+            E-Mail:
+        </label>
+        @Html.TextBoxFor(x => x.e_mail_address)
+    </div>
+
+        <div class="btn">
+            <input type="submit" value="Finish" />
+        </div>
+    }
+</div>
