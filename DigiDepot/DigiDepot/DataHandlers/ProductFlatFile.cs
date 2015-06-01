@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
 using System.IO;
+using DigiDepot.Enums;
 
 
 namespace DigiDepot.DataHandlers
@@ -206,6 +207,12 @@ namespace DigiDepot.DataHandlers
                 file.WriteLine(p);
             }
             file.Dispose();
+        }
+
+        public IEnumerable<Product> GetProductsByCategory(Category c)
+        {
+            var toReturn = catalog.Where(k => k.Value.Categories.Contains(c)).Select(k => k.Value);
+            return toReturn;
         }
     }
 }
