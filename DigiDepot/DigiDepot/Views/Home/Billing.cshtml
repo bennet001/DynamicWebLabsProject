@@ -2,20 +2,20 @@
 
 @{
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Login</h2>
+<div class="jumbotron"><h2>Login</h2></div>
 
-<div class="Invitation">
+
+<div >
     @using (Html.BeginForm())
     {
-        <div class="ValidationView">
+        <div >
             @Html.ValidationSummary()
         </div>
         <br />
 
-        <div class="InputInformation">
+        <div >
             <label>
                 User Name:
             </label>
@@ -23,7 +23,7 @@
         </div>
         <br />
 
-        <div class="InputInformation">
+        <div >
             <label>
                 Password:
             </label>

@@ -1,21 +1,11 @@
 ﻿@model Product
 
 @{
-    Layout = null;
 }
 
-<!DOCTYPE html>
+<div class="jumbotron">
+    <h2>@Model.Name</h2>
+    <h3>@Model.Price  Avaliable: @Model.Stock</h3>
+    @Html.ActionLink("Add To Cart", "AddToCart", new { id = @Model.Id })
+</div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ShowProduct</title>
-</head>
-<body>
-    <div>
-        <h2>@Model.Name</h2>
-        <h3>@Model.Price  Avaliable: @Model.Stock</h3>
-        @Html.ActionLink("Add To Cart", "AddToCart", new { id = @Model.Id })
-    </div>
-</body>
-</html>
