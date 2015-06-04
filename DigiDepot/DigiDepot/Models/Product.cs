@@ -8,6 +8,11 @@ namespace DigiDepot
 {
     public partial class Product
     {
+        public Product()
+        {
+
+        }
+
         public Product(long productID,string name, decimal priceing)
         {
             ID = productID;
