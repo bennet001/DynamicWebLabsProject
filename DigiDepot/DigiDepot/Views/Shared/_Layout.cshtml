@@ -1,48 +1,47 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - DigiDepot Group 5 ASP.NET Application</title>
-    <link href="~/Styles/MainStyleSheet.css" rel="stylesheet" type="text/css" />
-    
+    <title>@ViewBag.Title</title>
+
 </head>
 <body>
-
-    <div class="sidebar">
-        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        <br />
-        @Html.ActionLink("Catalog", "CatalogPage", "Catalog", new { area = "" }, new { @class = "navbar-brand" })
-        <br />
-        Search
-        <br />
-        @if (Session["UserInfo"] == null)
-        { 
-        @Html.ActionLink("Log In", "LogIn","Home")
-        <br />
-        @Html.ActionLink("Register", "Register", "Home")
-        <br />
-        }
-        else
-        {
-            @Html.ActionLink(linkText: @Session["UserInfo"].ToString(), actionName: "UserPage", controllerName: "Home", routeValues: new { id = @Session["UserID"] }, htmlAttributes: null)
-            <br />
-            @Html.ActionLink(linkText: "Account Detail", actionName: "BillingInfo", controllerName: "Home", routeValues: new { id = @Session["UserID"] }, htmlAttributes: null)
-            <br />
-            <br />
-            @Html.ActionLink(linkText:"LogOut", actionName:"LogOut", controllerName:"Home")
-        }
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("DigiDepot", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav h4">
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                <div class="col-sm-3 col-md-3 pull-right">
+                    <form class="navbar-form navbar-text" role="search">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-sm" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search" name="query" id="query">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container">
+    <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer class="footer">
-            <p>&copy; @DateTime.Now.Year - DigiDepot Group 5 ASP.NET Application</p>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Powered by <a href="http://www.yourockwoohoo.com">Magic</a></p>
         </footer>
     </div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
