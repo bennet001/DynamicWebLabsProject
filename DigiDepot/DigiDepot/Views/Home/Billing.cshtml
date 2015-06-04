@@ -1,4 +1,4 @@
-﻿@model DigiDepot.Models.BillingInformation
+﻿@model DigiDepot.User
 
 @{
     ViewBag.Title = "Login";
@@ -11,23 +11,23 @@
     @using (Html.BeginForm())
     {
         <div class="ValidationView">
-                @Html.ValidationSummary()
-            </div>
-        <br />
-
-        <div class="UserName">
-            <label>
-                First name:
-            </label>
-            @Html.TextBoxFor(x=>x.FirstName)
+            @Html.ValidationSummary()
         </div>
         <br />
 
-        <div class="Email">
+        <div class="InputInformation">
             <label>
-                Email:
+                User Name:
             </label>
-            @Html.TextBoxFor(x => x.EmailAddress)
+            @Html.TextBoxFor(x => x.user_name)
+        </div>
+        <br />
+
+        <div class="InputInformation">
+            <label>
+                Password:
+            </label>
+            @Html.TextBoxFor(x => x.password)
         </div>
         <br />
 

@@ -1,24 +1,14 @@
 ﻿@model Cart
 
 @{
-    Layout = null;
+    ViewBag.Title = "ShowProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ShowProduct</title>
-</head>
-<body>
     <div>
-        <h1>The Cart Id is @Model.CartID</h1>
+        <h1>The Cart Id is @Model.Id</h1>
         @*@foreach (Product p in Model.ItemsInCart)
         {
             @Html.Partial("~/Views/_CartContentsPartial.cshtml", @p);
 
         }*@
     </div>
-</body>
-</html>

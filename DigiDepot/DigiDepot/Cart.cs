@@ -14,7 +14,7 @@ namespace DigiDepot
     
     public partial class Cart
     {
-        public int CartID { get; set; }
+        public int Id { get; set; }
         public string ProductIDs { get; set; }
         public string ProductQuantity { get; set; }
     }

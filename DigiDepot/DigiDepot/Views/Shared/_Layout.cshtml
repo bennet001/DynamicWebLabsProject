@@ -26,7 +26,12 @@
         }
         else
         {
-            @Html.ActionLink(@Session["UserInfo"].ToString(), "UserPage", "Home", new { id = @Session["UserID"] })
+            @Html.ActionLink(linkText: @Session["UserInfo"].ToString(), actionName: "UserPage", controllerName: "Home", routeValues: new { id = @Session["UserID"] }, htmlAttributes: null)
+            <br />
+            @Html.ActionLink(linkText: "Account Detail", actionName: "BillingInfo", controllerName: "Home", routeValues: new { id = @Session["UserID"] }, htmlAttributes: null)
+            <br />
+            <br />
+            @Html.ActionLink(linkText:"LogOut", actionName:"LogOut", controllerName:"Home")
         }
     </div>
     <div class="container">

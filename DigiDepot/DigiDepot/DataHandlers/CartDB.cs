@@ -66,7 +66,7 @@ namespace DigiDepot.DataHandlers
                 newitemList.Add(k.Key + " ");
                 newquantList.Add(k.Value + " ");
             }
-            Cart editMe = db.Carts.Where(c => c.CartID == car.CartID).First();
+            Cart editMe = db.Carts.Where(c => c.Id == car.Id).First();
             editMe.ProductIDs = newitemList.ToString();
             editMe.ProductQuantity = newquantList.ToString();
 
@@ -79,7 +79,7 @@ namespace DigiDepot.DataHandlers
             DigiDepotDBContext db = new DigiDepotDBContext();
             IQueryable<Cart> cartQuery = db.Carts;
 
-            Cart foundItem = (Cart)cartQuery.Where(cart => cart.CartID.Equals(item.CartID)).First();
+            Cart foundItem = (Cart)cartQuery.Where(cart => cart.Id.Equals(item.Id)).First();
             db.Carts.Remove(foundItem);
             db.SaveChanges();
             #region commented
@@ -118,7 +118,7 @@ namespace DigiDepot.DataHandlers
                 newitemList.Add(k.Key + " ");
                 newquantList.Add(k.Value + " ");
             }
-            Cart editMe = db.Carts.Where(c => c.CartID == car.CartID).First();
+            Cart editMe = db.Carts.Where(c => c.Id == car.Id).First();
             editMe.ProductIDs = newitemList.ToString();
             editMe.ProductQuantity = newquantList.ToString();
 
@@ -133,7 +133,7 @@ namespace DigiDepot.DataHandlers
 
             foreach (Cart c in cartQuery)
             {
-                if (c.CartID.Equals(id))
+                if (c.Id.Equals(id))
                 {
                     item = c;
                 }
@@ -158,7 +158,7 @@ namespace DigiDepot.DataHandlers
 
             foreach (Cart c in cartQuery)
             {
-                if (c.CartID.Equals(item.CartID))
+                if (c.Id.Equals(item.Id))
                 {
                     ret = c;
                 }

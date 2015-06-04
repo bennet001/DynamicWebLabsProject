@@ -12,13 +12,19 @@ namespace DigiDepot
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class BillingInfo
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public Nullable<int> Stock { get; set; }
-        public string Description { get; set; }
-        public string PicLocation { get; set; }
+        public string EmailAddress { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Company { get; set; }
+        public string Address { get; set; }
+        public string Address2 { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public int ZipCode { get; set; }
+        public string AccountCard { get; set; }
+        public short Security { get; set; }
     }
 }

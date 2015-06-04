@@ -100,11 +100,16 @@
     </Content>
     <Content Include="App_Data\ProductPage.txt" />
     <Content Include="Global.asax" />
+    <Content Include="Images\geforce-gtx-titan-z-thumb.png" />
+    <Content Include="Images\gtx-980m-thumb.png" />
     <Content Include="Styles\MainStyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BillingInfo.cs">
+      <DependentUpon>DigiDepotDataBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Cart.cs">
       <DependentUpon>DigiDepotDataBase.tt</DependentUpon>
     </Compile>
@@ -112,6 +117,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="DataHandlers\CartDB.cs" />
+    <Compile Include="DataHandlers\IBillingInfoDB.cs" />
     <Compile Include="DataHandlers\ProductDB.cs" />
     <Compile Include="DataHandlers\UserDB.cs" />
     <Compile Include="DigiDepotDataBase.Context.cs">
@@ -136,7 +142,7 @@
     <Compile Include="Interfaces\IDataHandler.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\BillingInformation.cs" />
+    <Compile Include="Models\BillingInfo.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="MyValidations\EmailValidation.cs" />
     <Compile Include="Product.cs">
@@ -182,6 +188,8 @@
     <Content Include="Views\Catalog\ViewCart.cshtml" />
     <Content Include="Views\_CartContentsPartial.cshtml" />
     <Content Include="Views\_CatalogPartial.cshtml" />
+    <Content Include="Views\Home\BillingInfo.cshtml" />
+    <Content Include="Views\Home\EditBilling.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

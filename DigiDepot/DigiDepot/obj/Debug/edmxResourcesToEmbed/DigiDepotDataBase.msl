@@ -1,13 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DigiDepotDBModelStoreContainer" CdmEntityContainer="DigiDepotDBContext">
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="DigiDepotDBModel.User">
-        <MappingFragment StoreEntitySet="User">
+    <EntitySetMapping Name="BillingInfoes">
+      <EntityTypeMapping TypeName="DigiDepotDBModel.BillingInfo">
+        <MappingFragment StoreEntitySet="BillingInfo">
+          <ScalarProperty Name="Security" ColumnName="Security" />
+          <ScalarProperty Name="AccountCard" ColumnName="AccountCard" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="user_name" ColumnName="user_name" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="e_mail_address" ColumnName="e_mail_address" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -16,17 +24,29 @@
         <MappingFragment StoreEntitySet="Cart">
           <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
           <ScalarProperty Name="ProductIDs" ColumnName="ProductIDs" />
-          <ScalarProperty Name="CartID" ColumnName="CartID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="DigiDepotDBModel.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="PicLocation" ColumnName="PicLocation" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Stock" ColumnName="Stock" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DigiDepotDBModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Bios" ColumnName="Bios" />
+          <ScalarProperty Name="e_mail_address" ColumnName="e_mail_address" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -1,25 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DigiDepotDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="User">
-    <Key>
-      <PropertyRef Name="user_name" />
-      <PropertyRef Name="password" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="e_mail_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
   <EntityContainer Name="DigiDepotDBContext" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="BillingInfoes" EntityType="DigiDepotDBModel.BillingInfo" />
     <EntitySet Name="Carts" EntityType="DigiDepotDBModel.Cart" />
     <EntitySet Name="Products" EntityType="DigiDepotDBModel.Product" />
+    <EntitySet Name="Users" EntityType="DigiDepotDBModel.User" />
   </EntityContainer>
+  <EntityType Name="BillingInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Company" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="Int32" Nullable="false" />
+    <Property Name="AccountCard" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Security" Type="Int16" Nullable="false" />
+  </EntityType>
   <EntityType Name="Cart">
     <Key>
-      <PropertyRef Name="CartID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="CartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ProductIDs" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
     <Property Name="ProductQuantity" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
   </EntityType>
@@ -32,5 +40,16 @@
     <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
     <Property Name="Stock" Type="Int32" />
     <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PicLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="e_mail_address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Bios" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

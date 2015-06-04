@@ -5,17 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>UserPage</h2>
+<h2 class="header">UserPage</h2>
 
-<div>
+<div class="Information">
     @Model.user_name
 </div>
 
-<div>
+<div class="Information">
     @Model.e_mail_address
     <br />
     @Html.ActionLink("Edit", "EmailEdit", new { id = Model.Id})
 </div>
-<div>
-    @Html.ActionLink("Delete", "AccountDelete", new { id = Model.Id })
+<div class="Dangerous">
+    @Html.ActionLink("Delete Acount", "AccountDelete", new { id = Model.Id })
 </div>

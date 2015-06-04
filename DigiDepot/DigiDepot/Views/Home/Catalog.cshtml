@@ -10,7 +10,8 @@
     @foreach (Product pro in Model)
     {
         <div class="ProductItem">
-            @Html.ActionLink("Catalog", "CatalogPage", "Catalog")
+            <img src=@pro.PicLocation/>
+            @Html.ActionLink(pro.Name, "CatalogPage", "Catalog")
         </div>
     }
 </div>

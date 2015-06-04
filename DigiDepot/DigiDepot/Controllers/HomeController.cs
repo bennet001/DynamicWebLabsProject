@@ -13,6 +13,7 @@ namespace DigiDepot.Controllers
     public class HomeController : Controller
     {
         IDataHandler<Product> iproductdat = new ProductDB();
+        IDataHandler<BillingInfo> IBilling = new IBillingInfoDB();
         //IDataHandler<BillingInformation> ibillingdat = new BillingFlatFile();
         IDataHandler<User> iuserdat = new UserDB();
         // GET: Home
@@ -20,6 +21,7 @@ namespace DigiDepot.Controllers
         {
             return View();
         }
+
         public ActionResult Catalog()
         {
             List<Product> passed = iproductdat.GetAllItems().ToList();
@@ -55,6 +57,15 @@ namespace DigiDepot.Controllers
         }
         #endregion
 
+        #region LogOff
+        public ActionResult LogOut()
+        {
+            Session["UserInfo"] = null;
+            Session["UserID"] = null;
+            return RedirectToAction("Index");
+        }
+        #endregion
+
         #region Register
         [HttpGet]
         public ActionResult Register()
@@ -68,6 +79,8 @@ namespace DigiDepot.Controllers
             if (user != null && user.user_name.Length > 0 && user.password.Length > 0 && EmailValidation.IsValid(user.e_mail_address))
             {
                 iuserdat.Create(user);
+                IBilling.Create(new BillingInfo());
+                
                 Session["UserInfo"] = user.user_name;
                 Session["UserID"] = user.Id;
                 return RedirectToAction("index");
@@ -80,6 +93,7 @@ namespace DigiDepot.Controllers
         #endregion
 
 
+        #region User_Info
         public ActionResult UserPage()
         {
             int id = -1;
@@ -93,6 +107,7 @@ namespace DigiDepot.Controllers
             }
         }
 
+        #region EmailEditing
         [HttpGet]
         public ActionResult EmailEdit(int id)
         {
@@ -113,7 +128,27 @@ namespace DigiDepot.Controllers
             iuserdat.Update(use);
             return View("Index");
         }
+        #endregion
 
+        #region Edit_Billing_Info
+        public ActionResult BillingInfo(int id)
+        {
+            return View(IBilling.Get(id));
+        }
+
+        [HttpGet]
+        public ActionResult EditBilling(int id)
+        {
+            return View(IBilling.Get(id));
+        }
+
+        [HttpPost]
+        public ActionResult EditBilling(BillingInfo given)
+        {
+            IBilling.Update(given);
+            return RedirectToAction("Index");
+        }
+        #endregion
 
         public ActionResult AccountDelete(int id)
         {
@@ -122,5 +157,6 @@ namespace DigiDepot.Controllers
             iuserdat.Delete(iuserdat.Get(id));
             return View("Index");
         }
+        #endregion
     }
 }

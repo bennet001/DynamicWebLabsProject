@@ -1,25 +1,17 @@
 ﻿@model List<Product>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Catalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>CatalogPage</title>
-</head>
-<body>
-    <div>
-        <h1>This is the Catelog</h1>
+<div>
+    <h1 class="header">This is the Catelog</h1>
+    <div class="content">
         @foreach (Product c in Model)
         {
             @Html.Partial("~/Views/_CatalogPartial.cshtml", @c);
         }
-        @Html.ActionLink("Cart", "ViewCart", new { id = 0 })
     </div>
-</body>
-</html>
+    @Html.ActionLink("Cart", "ViewCart", new { id = 0 })
+</div>
 

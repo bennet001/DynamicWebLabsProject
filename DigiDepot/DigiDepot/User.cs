@@ -18,5 +18,6 @@ namespace DigiDepot
         public string user_name { get; set; }
         public string password { get; set; }
         public string e_mail_address { get; set; }
+        public string Bios { get; set; }
     }
 }
