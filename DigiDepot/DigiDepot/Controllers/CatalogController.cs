@@ -1,7 +1,7 @@
 ﻿//using DigiDepot.DAL;
 using DigiDepot.DataHandlers;
 using DigiDepot.Interfaces;
-using DigiDepot.Models;
+using DigiDepot;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,5 @@
 ﻿using DigiDepot.DataHandlers;
-using DigiDepot.Models;
+using DigiDepot;
 using System;
 using System.Collections.Generic;
 using System.Linq;

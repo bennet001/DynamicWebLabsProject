@@ -1,4 +1,4 @@
-﻿using DigiDepot.Models;
+﻿using DigiDepot;
 using DigiDepot.DataHandlers;
 using DigiDepot.Interfaces;
 using System;

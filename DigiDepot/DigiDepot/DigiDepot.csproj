@@ -116,6 +116,7 @@
     <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="DAL\CartDBDAL.cs" />
     <Compile Include="DataHandlers\CartDB.cs" />
     <Compile Include="DataHandlers\IBillingInfoDB.cs" />
     <Compile Include="DataHandlers\ProductDB.cs" />
@@ -135,6 +136,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DigiDepotDataBase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Enums\Category.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -162,7 +164,7 @@
     <Content Include="Views\Home\Catalog.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Billing.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout_old.cshtml" />
     <EntityDeploy Include="DigiDepotDataBase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DigiDepotDataBase.Designer.cs</LastGenOutput>
@@ -190,6 +192,8 @@
     <Content Include="Views\_CatalogPartial.cshtml" />
     <Content Include="Views\Home\BillingInfo.cshtml" />
     <Content Include="Views\Home\EditBilling.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -200,9 +204,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

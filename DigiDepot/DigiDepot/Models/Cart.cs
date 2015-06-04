@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace DigiDepot.Models
+namespace DigiDepot
 {
     public partial class Cart 
     {
+        public Cart()
+        {
+
+        }
+
         public Cart(int ID, IEnumerable<Product> productList)
         {
             CartID = ID;

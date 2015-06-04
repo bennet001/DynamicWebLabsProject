@@ -4,18 +4,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DigiDepot.Models
+namespace DigiDepot
 {
-    public class Product
+    public partial class Product
     {
-        public Product(long productID,string name, double priceing)
+        public Product(long productID,string name, decimal priceing)
         {
             ID = productID;
             Name = name;
             Price = priceing;
             AvaliableQuantity = 20;
         }
-        public Product(long productID, string name, double priceing, int grab)
+        public Product(long productID, string name, decimal priceing, int grab)
         {
             ID = productID;
             Name = name;
@@ -24,8 +24,6 @@ namespace DigiDepot.Models
             AvaliableQuantity = 20 - grab;
         }
 
-        public string Name { get; set; }
-        public double Price { get; set; }
         public long ID { get; private set; }
         public int AvaliableQuantity { get; set; }
         public int GrabbedQuantity { get; set; }
