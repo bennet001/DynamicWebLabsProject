@@ -17,11 +17,19 @@
         @Html.HiddenFor(x => x.Id, Model.Id)
         @Html.HiddenFor(x => x.user_name,Model.user_name)
         @Html.HiddenFor(x=>x.password, Model.password)
-    <div class="email">
+    <div class="InputInformation">
         <label>
             E-Mail:
         </label>
         @Html.TextBoxFor(x => x.e_mail_address)
+    </div>
+    <div class="InputInformation">
+        <label>
+            Bios
+        </label>
+        <div class="InputInformation">
+            @Html.TextAreaFor(x => x.Bios)
+        </div>
     </div>
 
         <div class="btn">

@@ -29,3 +29,7 @@ body {
            top:0px; bottom:0;left:50px;
     margin:5px 0 0 0;
 }
+.InputInformation{
+    width : 400px;
+    height : 100px;
+}
