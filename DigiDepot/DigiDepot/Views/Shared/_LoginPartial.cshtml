@@ -12,6 +12,9 @@
         <li>
             @Html.ActionLink(linkText: "Log Out", actionName: "LogOut", controllerName: "Home")
         </li>
+        <li>
+            @Html.ActionLink(linkText: "Account", actionName: "BillingInfo", controllerName: "Home", routeValues: new { id = @Session["UserID"] }, htmlAttributes: null)
+        </li>
     </ul>
     }
 }
