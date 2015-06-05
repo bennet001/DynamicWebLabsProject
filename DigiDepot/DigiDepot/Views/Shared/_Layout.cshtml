@@ -19,9 +19,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav h4">
-                    <li>@Html.ActionLink("Log In", "LogIn", "Home")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Home")</li>
                 </ul>
+                @Html.Partial("_LoginPartial")
                 <div class="col-sm-3 col-md-3 pull-right">
                     <form class="navbar-form navbar-text" role="search">
                         <div class="input-group input-group-sm">

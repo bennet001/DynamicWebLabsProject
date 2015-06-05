@@ -5,15 +5,16 @@
 }
 
 <h2>LogIn</h2>
-<div class="Invitation">
+<div class="jumbotron"><h2>LogIn</h2></div>
+<div>
     @using (Html.BeginForm())
     {
-        <div class="ValidationView">
+        <div>
             @Html.ValidationSummary()
         </div>
         <br />
 
-        <div class="InputInformation">
+        <div>
             <label>
                 User name:
             </label>
@@ -21,7 +22,7 @@
         </div>
         <br />
 
-        <div class="InputInformation">
+        <div>
             <label>
                 Password:
             </label>
