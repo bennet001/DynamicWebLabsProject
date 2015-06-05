@@ -1,6 +1,6 @@
 ﻿@model Product
 <img src=@Model.PicLocation />
 @Html.ActionLink(@Model.Name.ToString(), "ShowProduct", new { id = @Model.Id })
-<h3>Price: $@Model.Price</h3>
+<h3>Price: @String.Format("{0:C}", Model.Price) </h3>
 <h3>Avaliable: @Model.Stock</h3>
 
