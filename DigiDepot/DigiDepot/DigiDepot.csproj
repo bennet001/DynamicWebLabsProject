@@ -159,6 +159,8 @@
     <Compile Include="User.cs">
       <DependentUpon>DigiDepotDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CartViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -203,6 +205,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\Catalog\Checkout.cshtml" />
+    <Content Include="Views\Catalog\EditInCart.cshtml" />
+    <Content Include="Views\_CheckoutPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,13 +1,25 @@
-﻿@model Cart
+﻿@using DigiDepot.ViewModels
+@model CartViewModel
 
 @{
     ViewBag.Title = "ShowProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron">
-    <h1>The Cart Id is @Model.Id</h1>
-    @*@foreach (Product p in Model.ItemsInCart)
+    <h1>Your cart contains.</h1>
+</div>
+<div>
+    @*<h1>The Cart Id is @Model.CartID</h1>*@
+    @foreach (Product p in Model.ItemsInCart)
     {
-        @Html.Partial("~/Views/_CartContentsPartial.cshtml", @p);
-
-    }*@
+        @Html.Partial("~/Views/_CartContentsPartial.cshtml", @Model.getProductModel(p.Id));
+    }
+    @if (Model.ItemsInCart.Count > 0)
+    {
+        @Html.ActionLink("Checkout", "Checkout");
+    }
+    else
+    {
+        <p>The Cart is empty</p>
+    }
 </div>

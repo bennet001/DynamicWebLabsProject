@@ -2,20 +2,18 @@
 
 @{
     ViewBag.Title = "Catalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="jumbotron">
     <h2>Catalog</h2>
 </div>
-<div class="row">
-    <div class="col-md-12">
-        <ul>
-            @foreach (Product pro in Model)
-            {
-                <li>
-                    <img src=@pro.PicLocation />
-                    @Html.ActionLink(pro.Name, "CatalogPage", "Catalog")
-                </li>
-            }
-        </ul>
-    </div>
+<div class="content">
+    @foreach (Product pro in Model)
+    {
+        <div class="ProductItem">
+            <img src=@pro.PicLocation />
+            @Html.ActionLink(pro.Name, "CatalogPage", "Catalog")
+        </div>
+    }
 </div>

@@ -1,0 +1,23 @@
+﻿@using DigiDepot.ViewModels
+@model ProductViewModel
+@{
+    ViewBag.Title = "EditInCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h2>EditInCart</h2>
+</div>
+<div>
+
+    <p>@Model.Name</p>
+    @using (Html.BeginForm("EditInCart", "Catalog", FormMethod.Post))
+    {
+        <h3>@Model.GrabbedQuantity</h3>
+        @Html.Hidden("id", Model.ID)
+        @Html.Hidden("cID", Model.inCart)
+        @Html.TextBox("qty", Model.GrabbedQuantity)
+        <input type="submit" value="Set Quantity" />
+    }
+    @Html.ValidationSummary()
+</div>

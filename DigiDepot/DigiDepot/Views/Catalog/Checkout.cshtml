@@ -1,0 +1,17 @@
+﻿@using DigiDepot.ViewModels
+@model CartViewModel
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h2>Checkout</h2>
+</div>
+<div>
+    @foreach (KeyValuePair<int, int> k in Model.ItemDictionary)
+    {
+        @Html.Partial("~/Views/_CheckoutPartial.cshtml", @Model.getProductModel(k.Key));
+    }
+    @Html.ActionLink("Confirm Purchase", "ConfirmPurchase", new { id = @Model.CartID });
+</div>

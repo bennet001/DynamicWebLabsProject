@@ -6,7 +6,7 @@ using System.Web;
 
 namespace DigiDepot
 {
-    public partial class Cart 
+    public partial class Cart
     {
         public Cart()
         {
@@ -39,6 +39,10 @@ namespace DigiDepot
             {
                 s.Append(" ProID:").Append(p.ID).Append("ProPrice:").Append(p.Price).Append("ProGrab:").Append(p.GrabbedQuantity);
             }
+            //foreach (KeyValuePair<long, int> k in ItemDictionary)
+            //{
+            //    s.Append(" ProID:").Append(k.Key).Append(" ProPrice:").Append(k.Value);
+            //}
             return s.ToString();
         }
 

@@ -2,9 +2,11 @@
 
 @{
     ViewBag.Title = "EmailEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div class="jumbotron"><h2>EmailEdit</h2></div>
+<div class="jumbotron">
+    <h2>EmailEdit</h2>
+</div>
 
 <div class="Invitation">
     @using (Html.BeginForm())
@@ -14,22 +16,22 @@
         </div>
         <br />
         @Html.HiddenFor(x => x.Id, Model.Id)
-        @Html.HiddenFor(x => x.user_name,Model.user_name)
-        @Html.HiddenFor(x=>x.password, Model.password)
-    <div class="InputInformation">
-        <label>
-            E-Mail:
-        </label>
-        @Html.TextBoxFor(x => x.e_mail_address)
-    </div>
-    <div class="InputInformation">
-        <label>
-            Bios
-        </label>
+        @Html.HiddenFor(x => x.user_name, Model.user_name)
+        @Html.HiddenFor(x => x.password, Model.password)
         <div class="InputInformation">
-            @Html.TextAreaFor(x => x.Bios)
+            <label>
+                E-Mail:
+            </label>
+            @Html.TextBoxFor(x => x.e_mail_address)
         </div>
-    </div>
+        <div class="InputInformation">
+            <label>
+                Bios
+            </label>
+            <div class="InputInformation">
+                @Html.TextAreaFor(x => x.Bios)
+            </div>
+        </div>
 
         <div class="btn">
             <input type="submit" value="Finish" />

@@ -2,30 +2,31 @@
 
 @{
     ViewBag.Title = "Edit Billing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <div class="jumbotron">
-        <h3 class="header">Edit @Model.EmailAddress's Billing Info</h3>
-    </div>
-    <form method="post" action="UpdateProfile">
-        First Name:<input class="InputInformation" type="text" name="FirstName" value="@Model.FirstName" />
-        <br />
-        Last Name:<input class="InputInformation" type="text" name="LastName" value="@Model.LastName" />
-        <br />
-        Company (optional):<input class="InputInformation" type="text" name="Company" value="@Model.Company" />
-        <br />
-        Address:<input class="InputInformation" type="text" name="Address" value="@Model.Address" />
-        <br />
-        Apartment, Suite, etc. (optional):<input class="InputInformation" type="text" name="Address2" value="@Model.Address2" />
-        <br />
-        City: <input class="InputInformation" type="text" name="City" value="@Model.City" />
-        <br />
-        State: <input class="InputInformation" type="text" name="State" value="@Model.State" />
-        <br />
-        Zip Code: <input class="InputInformation" type="text" name="Zip" value="@Model.ZipCode" />
-        <br />
-        Card Number: <input class="InputInformation" type="text" name="Account" value="@Model.AccountCard" />
-        <br />
-        Security Code: <input class="InputInformation" type="text" name="Security" value="@Model.Security" />
-        <br />
-        <input type="submit" value="Submit" />
-    </form>
+<div class="jumbotron">
+    <h3 class="header">Edit @Model.EmailAddress's Billing Info</h3>
+</div>
+<form method="post" action="UpdateProfile">
+    First Name:<input class="InputInformation" type="text" name="FirstName" value="@Model.FirstName" />
+    <br />
+    Last Name:<input class="InputInformation" type="text" name="LastName" value="@Model.LastName" />
+    <br />
+    Company (optional):<input class="InputInformation" type="text" name="Company" value="@Model.Company" />
+    <br />
+    Address:<input class="InputInformation" type="text" name="Address" value="@Model.Address" />
+    <br />
+    Apartment, Suite, etc. (optional):<input class="InputInformation" type="text" name="Address2" value="@Model.Address2" />
+    <br />
+    City: <input class="InputInformation" type="text" name="City" value="@Model.City" />
+    <br />
+    State: <input class="InputInformation" type="text" name="State" value="@Model.State" />
+    <br />
+    Zip Code: <input class="InputInformation" type="text" name="Zip" value="@Model.ZipCode" />
+    <br />
+    Card Number: <input class="InputInformation" type="text" name="Account" value="@Model.AccountCard" />
+    <br />
+    Security Code: <input class="InputInformation" type="text" name="Security" value="@Model.Security" />
+    <br />
+    <input type="submit" value="Submit" />
+</form>

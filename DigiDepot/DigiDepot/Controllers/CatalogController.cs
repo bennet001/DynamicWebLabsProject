@@ -1,7 +1,6 @@
-﻿//using DigiDepot.DAL;
-using DigiDepot.DataHandlers;
+﻿using DigiDepot.DataHandlers;
 using DigiDepot.Interfaces;
-using DigiDepot;
+using DigiDepot.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,23 +33,75 @@ namespace DigiDepot.Controllers
 
         public ActionResult AddToCart(int id)
         {
+            int userID = (int)Session["UserID"];
             Product adding = iproductdat.Get(id);
-            Cart firstCart = icartdat.Get(0);
+            Cart firstCart = icartdat.Get(userID);
             icartdat.Update(firstCart, adding.Id, 1);
             long theId = id;
             //This shows that the item is being added
             //return RedirectToAction("ShowProduct", new { id = theId });
             return RedirectToAction("CatalogPage");
         }
-        public ActionResult ViewCart(int id)
-        {
-            Cart ViewMe = icartdat.Get(id);
 
-            return View(ViewMe);
+        public ActionResult RemoveFromCart(int id)
+        {
+            int userID = (int)Session["UserID"];
+            Product removing = iproductdat.Get(id);
+            Cart car = icartdat.Get(userID);
+            //icartdat.Update(car,removing)
+            icartdat.Remove(car, removing.Id);
+
+            return RedirectToAction("CatalogPage");
+        }
+
+        public ActionResult ViewCart()
+        {
+            int id = (int)Session["UserID"];
+            CartViewModel Look = new CartViewModel(id);
+
+            return View(Look);
+        }
+
+        public ActionResult Checkout()
+        {
+            int id = (int)Session["UserID"];
+            CartViewModel buyMe = new CartViewModel(id);
+
+            return View(buyMe);
+        }
+
+        public ActionResult ConfirmPurchase(int id)
+        {
+            CartViewModel finalize = new CartViewModel(id);
+            finalize.purchaseProduct(finalize.CartID);
+
+            return RedirectToAction("CatalogPage");
+        }
+
+        [HttpGet]
+        public ActionResult EditInCart(int cartId, int prodID)
+        {
+            CartViewModel editing = new CartViewModel(cartId);
+            ProductViewModel editMe = editing.getProductModel(prodID);
+
+            return View(editMe);
+        }
+
+        [HttpPost]
+        public ActionResult EditInCart(int id, int cID, int qty)
+        {
+            CartViewModel editing = new CartViewModel(cID);
+            editing.editProduct(cID, id, qty);
+
+            return RedirectToAction("ViewCart", new { id = cID });
         }
 
         public void CreateTestCase()
         {
+            Cart testCart = new Cart();
+            testCart.ProductIDs = "";
+            testCart.ProductQuantity = "";
+            icartdat.Create(testCart);
             //IEnumerable<Product> testProducts = new List<Product>{
             //    new Product(0,"TestSoap",1.35),
             //    new Product(1,"TestBagel",0.99),

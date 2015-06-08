@@ -1,4 +1,7 @@
-﻿@model Cart
+﻿@using DigiDepot.ViewModels
+@model ProductViewModel
 
-<h3>@Model.ProductIDs Price: $@Model.ProductQuantity</h3>
-<h3>In Cart:</h3>
+<h3>@Model.Name Price: $@Model.Price</h3>
+<h3>In Cart: @Model.GrabbedQuantity</h3>
+@Html.ActionLink("Remove Item", "RemoveFromCart", new { id = @Model.ID })
+@Html.ActionLink("Edit", "EditInCart", new { cartId = @Model.inCart, prodID = @Model.ID })

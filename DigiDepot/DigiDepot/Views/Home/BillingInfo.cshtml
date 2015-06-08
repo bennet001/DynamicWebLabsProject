@@ -1,16 +1,20 @@
 ﻿@model DigiDepot.BillingInfo
 @{
     ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron"><h2>Account</h2></div>
-<div>
+
+<div class="jumbotron">
+    <h2>Account</h2>
+</div>
+<div class="content">
     @if (string.IsNullOrEmpty(Model.EmailAddress))
     {
         @Html.ActionLink(linkText: "Add", actionName: "EditBilling", controllerName: "Home", routeValues: new { id = @Session["UserID"] }, htmlAttributes: null)
     }
     else
     {
-        @Html.ActionLink(linkText:"Edit", actionName:"EditBilling", controllerName: "Home", routeValues: new { id = @Session["UserID"] }, htmlAttributes: null)
+        @Html.ActionLink(linkText: "Edit", actionName: "EditBilling", controllerName: "Home", routeValues: new { id = @Session["UserID"] }, htmlAttributes: null)
         <br />
         @Model.FirstName
         <br />

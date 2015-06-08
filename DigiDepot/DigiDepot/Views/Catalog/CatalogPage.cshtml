@@ -2,15 +2,20 @@
 
 @{
     ViewBag.Title = "Catalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="jumbotron">
-    <h1 class="header">This is the Catalog</h1>
+    <h2>This is the Catelog</h2>
+</div>
+
+<div>
     <div class="content">
         @foreach (Product c in Model)
         {
             @Html.Partial("~/Views/_CatalogPartial.cshtml", @c);
         }
     </div>
-    @Html.ActionLink("Cart", "ViewCart", new { id = 0 })
+    @Html.ActionLink("Cart", "ViewCart")
 </div>
 
