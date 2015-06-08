@@ -10,6 +10,6 @@
 </div>
 <div>
     <h2>@Model.Name</h2>
-    <h3>@Model.Price  Avaliable: @Model.Stock</h3>
+    <h3>@String.Format("{0:C}", Model.Price)  Avaliable: @Model.Stock</h3>
     @Html.ActionLink("Add To Cart", "AddToCart", new { id = @Model.Id })
 </div>
