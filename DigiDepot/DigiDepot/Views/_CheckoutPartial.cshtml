@@ -2,4 +2,4 @@
 @model ProductViewModel
 
 <h3>@Model.Name </h3>
-<h2>$@Model.Price</h2>
+<h2>@String.Format("{0:C2}",Model.Price)</h2>
