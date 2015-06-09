@@ -13,7 +13,7 @@ namespace DigiDepot.Controllers
     {
         IDataHandler<Cart> icartdat = new CartDB();
         IDataHandler<Product> iproductdat = new ProductDB();
-
+        IDataHandler<BillingInfo> ibillingdat = new IBillingInfoDB();
         // GET: Catelog
         public ActionResult CatalogPage()
         {
@@ -70,8 +70,16 @@ namespace DigiDepot.Controllers
             return View(buyMe);
         }
 
-        public ActionResult ConfirmPurchase(int id)
+        public ActionResult CheckBilling()
         {
+            int id = (int)Session["UserID"];
+            BillingInfo checkMe = ibillingdat.Get(id);
+            return View(checkMe);
+        }
+
+        public ActionResult ConfirmPurchase()
+        {
+            int id = (int)Session["UserID"];
             CartViewModel finalize = new CartViewModel(id);
             finalize.purchaseProduct(finalize.CartID);
 

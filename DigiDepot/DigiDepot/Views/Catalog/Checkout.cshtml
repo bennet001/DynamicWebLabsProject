@@ -13,5 +13,5 @@
     {
         @Html.Partial("~/Views/_CheckoutPartial.cshtml", @Model.getProductModel(k.Key));
     }
-    @Html.ActionLink("Confirm Purchase", "ConfirmPurchase", new { id = @Model.CartID });
+    @Html.ActionLink("Confirm Purchase", "CheckBilling");
 </div>

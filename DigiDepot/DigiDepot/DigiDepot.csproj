@@ -208,6 +208,7 @@
     <Content Include="Views\Catalog\Checkout.cshtml" />
     <Content Include="Views\Catalog\EditInCart.cshtml" />
     <Content Include="Views\_CheckoutPartial.cshtml" />
+    <Content Include="Views\Catalog\CheckBilling.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
