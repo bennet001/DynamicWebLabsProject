@@ -3,5 +3,6 @@
 
 <h3>@Model.Name Price: @String.Format("{0:C2}",Model.Price)</h3>
 <h3>In Cart: @Model.GrabbedQuantity</h3>
+
 @Html.ActionLink("Remove Item", "RemoveFromCart", new { id = @Model.ID })
 @Html.ActionLink("Edit", "EditInCart", new { cartId = @Model.inCart, prodID = @Model.ID })

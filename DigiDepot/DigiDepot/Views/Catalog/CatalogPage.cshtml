@@ -6,7 +6,7 @@
 }
 
 <div class="jumbotron">
-    <h2>This is the Catelog</h2>
+    <h2>This is the Catalog</h2>
 </div>
 
 <div>
@@ -16,6 +16,7 @@
             @Html.Partial("~/Views/_CatalogPartial.cshtml", @c);
         }
     </div>
-    @Html.ActionLink("Cart", "ViewCart")
+    <p><a href="/Catalog/ViewCart" class="btn btn-primary btn-lg">Cart &raquo;</a></p>
+
 </div>
 

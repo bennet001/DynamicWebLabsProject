@@ -16,7 +16,8 @@
     }
     @if (Model.ItemsInCart.Count > 0)
     {
-        @Html.ActionLink("Checkout", "Checkout");
+        <p><a href="/Catalog/Checkout" class="btn btn-primary btn-lg">Checkout &raquo;</a></p>
+
     }
     else
     {
