@@ -1,0 +1,20 @@
+﻿@model BillingInfo
+@{
+    ViewBag.Title = "ConfirmCard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h2>ConfirmCard</h2>
+</div>
+<div class="content">
+    @using (Html.BeginForm("ConfirmCreditCard", "Catalog", FormMethod.Post))
+    {
+        <h3>Please enter the security code for the card ending with @Model.AccountCard.Substring(12)</h3>
+        
+        @Html.TextBox("code")
+        <input type="submit" value="Check" />
+    }
+    @Html.ValidationSummary()
+   
+</div>

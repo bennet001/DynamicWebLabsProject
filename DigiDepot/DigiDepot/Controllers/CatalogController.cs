@@ -104,6 +104,30 @@ namespace DigiDepot.Controllers
             return RedirectToAction("ViewCart", new { id = cID });
         }
 
+        [HttpGet]
+        public ActionResult ConfirmCreditCard()
+        {
+            int id = (int)Session["UserID"];
+            BillingInfo card = ibillingdat.Get(id);
+            return View(card);
+        }
+        [HttpPost]
+        public ActionResult ConfirmCreditCard(string code)
+        {
+            short input;
+            short.TryParse(code, out input);
+            int id = (int)Session["UserID"];
+            BillingInfo card = ibillingdat.Get(id);
+            if (card.Security == input)
+            {
+                return RedirectToAction("ConfirmPurchase");
+            }
+            else
+            {
+                return RedirectToAction("ConfirmCreditCard");
+            }
+        }
+
         public void CreateTestCase()
         {
             Cart testCart = new Cart();

@@ -9,5 +9,5 @@
 </div>
 <div class="content">
        <p>Does your Credit card end with the digits @Model.Security  and have the name @Model.FirstName @Model.LastName</p>
-    @Html.ActionLink("Yes", "ConfirmPurchase") @Html.ActionLink("No", "EditBilling", controllerName: "Home", routeValues: new { id = @Session["UserID"] }, htmlAttributes: null)
+    @Html.ActionLink("Yes", "ConfirmPurchase") @Html.ActionLink("No", "ConfirmCreditCard")
 </div>
