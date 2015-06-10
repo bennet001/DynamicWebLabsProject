@@ -15,12 +15,12 @@ namespace DigiDepot.Controllers
         IDataHandler<Product> iproductdat = new ProductDB();
         IDataHandler<BillingInfo> ibillingdat = new IBillingInfoDB();
         // GET: Catelog
-        public ActionResult CatalogPage()
+        public ActionResult CatalogPage(IEnumerable<Product> ProductList)
         {
 
             //CreateTestCase();
             //IEnumerable<Cart> display = cartDAL.GetAllCarts();
-            IEnumerable<Product> ProductList = iproductdat.GetAllItems();
+            ProductList = ProductList ?? iproductdat.GetAllItems();
             List<Product> theList = ProductList.ToList();
             return View("CatalogPage", theList);
         }
@@ -126,6 +126,13 @@ namespace DigiDepot.Controllers
             {
                 return RedirectToAction("ConfirmCreditCard");
             }
+        }
+
+        public ActionResult Search(string query)
+        {
+            //Put the search algorithm here, run it against the search query
+                //replace the "null" on the next line with an IEnumerable representing the search results
+            return CatalogPage(null);
         }
 
         public void CreateTestCase()
