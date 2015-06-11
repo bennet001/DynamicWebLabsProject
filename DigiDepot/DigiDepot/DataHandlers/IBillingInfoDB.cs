@@ -98,5 +98,11 @@ namespace DigiDepot.DataHandlers
         {
             throw new NotImplementedException();
         }
+
+
+        public List<BillingInfo> Search(string query)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -147,6 +147,7 @@
     </Compile>
     <Compile Include="Interfaces\ICartDAL.cs" />
     <Compile Include="Interfaces\IDataHandler.cs" />
+    <Compile Include="Interfaces\MyPredicate.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\BillingInfo.cs" />
@@ -156,6 +157,14 @@
       <DependentUpon>DigiDepotDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Search\SearchPredicates\AndPredicate.cs" />
+    <Compile Include="Search\SearchPredicates\ContainsPredicate.cs" />
+    <Compile Include="Search\SearchPredicates\OrPredicate.cs" />
     <Compile Include="User.cs">
       <DependentUpon>DigiDepotDataBase.tt</DependentUpon>
     </Compile>
@@ -210,6 +219,10 @@
     <Content Include="Views\_CheckoutPartial.cshtml" />
     <Content Include="Views\Catalog\CheckBilling.cshtml" />
     <Content Include="Views\Catalog\ConfirmCreditCard.cshtml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

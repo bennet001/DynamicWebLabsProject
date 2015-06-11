@@ -16,7 +16,9 @@
             @Html.Partial("~/Views/_CatalogPartial.cshtml", @c);
         }
     </div>
-    <p><a href="/Catalog/ViewCart" class="btn btn-primary btn-lg">Cart &raquo;</a></p>
+    @if (Session["UserID"] != null)
+    {
+        <p><a href="/Catalog/ViewCart" class="btn btn-primary btn-lg">Cart &raquo;</a></p>
+    }
 
 </div>
-

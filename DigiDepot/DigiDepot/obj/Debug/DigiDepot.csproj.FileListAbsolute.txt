@@ -37,6 +37,11 @@ C:\Users\Cbaker\Documents\DigiDepot\DynamicWebLabsProject\DigiDepot\DigiDepot\bi
 C:\Users\Cbaker\Documents\DigiDepot\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\System.Web.WebPages.xml
 C:\Users\Cbaker\Documents\DigiDepot\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Cbaker\Documents\DigiDepot\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.dll
+C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.xml
+C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\obj\Debug\DigiDepot.csprojResolveAssemblyReference.cache
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\DigiDepot.dll.config
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\DigiDepot.dll
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\DigiDepot.pdb
@@ -58,9 +63,3 @@ D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsPr
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\System.Web.WebPages.Razor.xml
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\obj\Debug\DigiDepot.dll
 D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\obj\Debug\DigiDepot.pdb
-D:\Backup\neumont\ComputerScience\DynamicWebApplication_Project\DynamicWebLabsProject\DigiDepot\DigiDepot\obj\Debug\DigiDepot.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.dll
-C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.SqlServer.dll
-C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.xml
-C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\bin\EntityFramework.SqlServer.xml
-C:\Users\user\Documents\GitHub\DynamicWebLabsProject\DigiDepot\DigiDepot\obj\Debug\DigiDepot.csprojResolveAssemblyReference.cache

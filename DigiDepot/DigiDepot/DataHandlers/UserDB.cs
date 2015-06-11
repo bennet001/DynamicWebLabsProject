@@ -87,5 +87,11 @@ namespace DigiDepot.DataHandlers
         {
             throw new NotImplementedException();
         }
+
+
+        public List<User> Search(string query)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

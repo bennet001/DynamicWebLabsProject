@@ -76,7 +76,7 @@ namespace DigiDepot.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
-            if (user != null && user.user_name.Length > 0 && user.password.Length > 0 && EmailValidation.IsValid(user.e_mail_address))
+            if (user.user_name!=null && user.user_name.Length > 0 && user.password.Length > 0 && EmailValidation.IsValid(user.e_mail_address))
             {
                 iuserdat.Create(user);
                 IBilling.Create(new BillingInfo());

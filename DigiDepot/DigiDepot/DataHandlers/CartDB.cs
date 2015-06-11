@@ -207,5 +207,11 @@ namespace DigiDepot.DataHandlers
         {
             throw new NotImplementedException();
         }
+
+
+        public List<Cart> Search(string query)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

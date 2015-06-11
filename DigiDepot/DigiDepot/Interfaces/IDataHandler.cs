@@ -23,7 +23,7 @@ namespace DigiDepot.Interfaces
         T Get(int id);
 
         T Get(T item);
-
+        List<T> Search(string query);
         void Create(T item);
 
         void Save(IEnumerable<T> item);

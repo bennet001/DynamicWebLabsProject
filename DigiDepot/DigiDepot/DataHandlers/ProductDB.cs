@@ -1,4 +1,6 @@
 ﻿using DigiDepot.Interfaces;
+using DigiDepot.Search.SearchMyPredicates;
+using DigiDepot.Search.SearchPredicate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +12,13 @@ namespace DigiDepot.DataHandlers
     {
         public List<Product> GetAllItems()
         {
-            DigiDepotDBContext db = new DigiDepotDBContext();
-            IQueryable<Product> productQuery = db.Products;
+            List<Product> AllProducts = null;
+            using (DigiDepotDBContext db = new DigiDepotDBContext())
+            {
+                IQueryable<Product> productQuery = db.Products;
 
-            List<Product> AllProducts = productQuery.ToList();
+                AllProducts = productQuery.ToList();
+            }
             return AllProducts;
         }
 
@@ -24,13 +29,15 @@ namespace DigiDepot.DataHandlers
 
         public void Update(Product pro, int itemID, int quantity)
         {
-            DigiDepotDBContext db = new DigiDepotDBContext();
-            Product productQuery = db.Products.Where(p => p.Id == pro.Id).Single();
+            using (DigiDepotDBContext db = new DigiDepotDBContext())
+            {
+                Product productQuery = db.Products.Where(p => p.Id == pro.Id).Single();
 
-            productQuery.Stock = quantity;
-            db.Entry(productQuery).State = System.Data.Entity.EntityState.Modified;
+                productQuery.Stock = quantity;
+                db.Entry(productQuery).State = System.Data.Entity.EntityState.Modified;
 
-            db.SaveChanges();
+                db.SaveChanges();
+            }
         }
 
         public void Delete(Product item)
@@ -79,6 +86,17 @@ namespace DigiDepot.DataHandlers
         public void Save(IEnumerable<Product> item)
         {
             throw new NotImplementedException();
+        }
+
+
+        public List<Product> Search(string query)
+        {
+            List<Product> returnable = null;
+            using (DigiDepotDBContext mdbd = new DigiDepotDBContext())
+            {
+                returnable = mdbd.Products.Where(m => m.Name.Contains(query)||m.Description.Contains(query)||query.Contains(m.Price.ToString())).ToList();
+            }
+            return returnable;
         }
     }
 }

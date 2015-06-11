@@ -10,7 +10,13 @@
 </div>
 <div>
     <h2>@Model.Name</h2>
+    <h2>@Model.Description</h2>
     <h3>@String.Format("{0:C}", Model.Price)  Avaliable: @Model.Stock</h3>
-
-    @Html.ActionLink("Add To Cart", "AddToCart", new { id = @Model.Id })
+    @if (Session["USerID"] != null) { 
+        @Html.ActionLink("Add To Cart", "AddToCart", new { id = @Model.Id })
+    }
+    else
+    {
+        @Html.ActionLink("Add To Cart", "Register", "Home")
+    }
 </div>

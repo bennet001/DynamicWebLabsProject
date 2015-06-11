@@ -130,9 +130,7 @@ namespace DigiDepot.Controllers
 
         public ActionResult Search(string query)
         {
-            //Put the search algorithm here, run it against the search query
-                //replace the "null" on the next line with an IEnumerable representing the search results
-            return CatalogPage(null);
+            return CatalogPage(iproductdat.Search(query));
         }
 
         public void CreateTestCase()

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace DigiDepot
@@ -46,6 +47,16 @@ namespace DigiDepot
                 if (value >= 0 && value <= _maxRating)
                     _rating = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return new StringBuilder(this.Name).
+                Append(" " ).
+                Append(this.Description).
+                Append(" ").
+                Append(this.Price).
+                ToString();
         }
 
         //public HashSet<Category> Categories { get; private set; }
